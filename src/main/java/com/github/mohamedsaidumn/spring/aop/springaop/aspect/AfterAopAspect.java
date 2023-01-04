@@ -17,7 +17,7 @@ public class AfterAopAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     //when method completes succesfully
-    @AfterReturning(value = "execution(* com.github.mohamedsaidumn.spring.aop.springaop.business.*.*(..))",
+    @AfterReturning(value = "com.github.mohamedsaidumn.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()",
             returning = "result")
     public void afterReturning(JoinPoint joinPoint, Object result) {
         logger.info("{} returned with value {}", joinPoint, result);
@@ -25,7 +25,7 @@ public class AfterAopAspect {
 
     //whether a method completes successfully or throws exception this will execute.
     //also @AfterThrowing also exist for exception.
-    @After(value = "execution(* com.github.mohamedsaidumn.spring.aop.springaop.business.*.*(..))")
+    @After(value = "com.github.mohamedsaidumn.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public void after(JoinPoint joinPoint) {
         logger.info("after execution of {}", joinPoint);
     }

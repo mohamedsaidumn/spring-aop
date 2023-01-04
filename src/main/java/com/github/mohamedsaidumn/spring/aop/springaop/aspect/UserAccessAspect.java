@@ -20,7 +20,7 @@ public class UserAccessAspect {
     //execution(* PACKAGE.*.*(..)) //return type . PACKAGE . class . method
     //Weaving & Weaver
 
-    @Before("execution(* com.github.mohamedsaidumn.spring.aop.springaop.business.*.*(..))")
+    @Before("com.github.mohamedsaidumn.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public void before(JoinPoint joinPoint){
         //Advice
         logger.info(" Check for user access ");
