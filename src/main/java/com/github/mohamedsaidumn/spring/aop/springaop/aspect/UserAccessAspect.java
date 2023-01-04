@@ -11,11 +11,12 @@ import org.springframework.context.annotation.Configuration;
 //Configuration
 @Aspect
 @Configuration
-public class BeforeAspect {
+public class UserAccessAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    //What kind of method calls I would intercept
+    //What kind of method calls I would want to intercept is called pointcut it structure
+    //Shown below.
     //execution(* PACKAGE.*.*(..)) //return type . PACKAGE . class . method
     //Weaving & Weaver
 
